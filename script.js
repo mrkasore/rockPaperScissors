@@ -26,10 +26,21 @@ function roundGame(player, computer) {
     }
 }
 
+// Actual game in 5 rounds
+function game() {
+    for (let i = 0; i < 5; i++) {
+        const playerMove = (prompt("Type your choice", 'paper')).toLowerCase();
+        const computerMove = getComputerChoice(arr);
 
-let playerMove = (prompt("Type your choice", 'paper')).toLowerCase();
-let computerMove = getComputerChoice(arr);
+        console.log(roundGame(playerMove, computerMove));
+        console.log('Your Choice ' + playerMove);
+        console.log('Computer Choice ' + computerMove);
+        console.log('----------------------');
 
-console.log(roundGame(playerMove, computerMove));
+    }
+}
+
+game();
+
 
 
