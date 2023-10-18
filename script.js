@@ -1,4 +1,12 @@
 let arr = ['rock', 'paper', 'scissors'];
+let playerMove;
+
+const btns = document.querySelectorAll('button');
+btns.forEach(element => {
+    element.addEventListener('click', function (e) {
+        game(e.target);
+    })
+});
 
 // Get a random choice
 function getComputerChoice(arr) {
@@ -27,20 +35,18 @@ function roundGame(player, computer) {
 }
 
 // Actual game in 5 rounds
-function game() {
-    for (let i = 0; i < 5; i++) {
-        const playerMove = (prompt("Type your choice", 'paper')).toLowerCase();
+function game(str) {
+        playerMove = str.innerText;
+        //const playerMove = (prompt("Type your choice", 'paper')).toLowerCase();
         const computerMove = getComputerChoice(arr);
 
         console.log(roundGame(playerMove, computerMove));
         console.log('Your Choice ' + playerMove);
         console.log('Computer Choice ' + computerMove);
         console.log('----------------------');
-
-    }
 }
 
-game();
+//game();
 
 
 
