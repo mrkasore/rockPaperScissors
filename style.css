@@ -29,4 +29,9 @@ button {
 img {
     height: 50px;
     width: 70px;
+    opacity: 0.2;
+}
+img:hover {
+    cursor: pointer;
+    opacity: 0.5;
 }

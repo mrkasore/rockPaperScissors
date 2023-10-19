@@ -4,16 +4,18 @@ let playerMove;
 let scorePlayer = 0;
 let scoreComputer = 0;
 
-const btns = document.querySelectorAll('button');
+//const btns = document.querySelectorAll('button');
 const divResult = document.querySelector('.result');
 const divPlayer = document.querySelector('.player');
 const divComputer = document.querySelector('.computer');
 const divScore = document.querySelector('.score');
 const divAfterFiveRounds = document.querySelector('.afterFiveRounds');
+const imgs = document.querySelectorAll('img');
 
-btns.forEach(element => {
+imgs.forEach(element => {
     element.addEventListener('click', function (e) {
         game(e.target);
+        
     })
 });
 
@@ -52,7 +54,9 @@ function roundGame(player, computer) {
 
 // Actual game DOM
 function game(str) {
-        playerMove = str.innerText;
+        playerMove = str.alt;
+        console.log(str);
+        //str.style.opacity = 1;
         //const playerMove = (prompt("Type your choice", 'paper')).toLowerCase();
         const computerMove = getComputerChoice(arr);
         divResult.innerText = roundGame(playerMove, computerMove);
