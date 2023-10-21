@@ -55,6 +55,7 @@ function roundGame(player, computer) {
 
 // Actual game DOM
 function game(str) {
+        //Refresh opacity
         imgs.forEach(item => {
             item.style.opacity = 0.2;
         });
@@ -72,13 +73,11 @@ function game(str) {
         divScore.innerText = 'Score: ' + scorePlayer + ' : ' + scoreComputer;
 
         let computerBtn = document.querySelector('#' + computerMove);
+        //Refresh opacity
         imgs_computer.forEach(item => {
             item.style.opacity = 0.2;
         });
         computerBtn.style.opacity = 1;
-
-        
-        
 
         if (scorePlayer >= 5) {
             divAfterFiveRounds.innerText = 'You Won the Game! Congrats';
