@@ -10,7 +10,8 @@ const divPlayer = document.querySelector('.player');
 const divComputer = document.querySelector('.computer');
 const divScore = document.querySelector('.score');
 const divAfterFiveRounds = document.querySelector('.afterFiveRounds');
-const imgs = document.querySelectorAll('img');
+const imgs = document.querySelectorAll('.btns-imgs');
+const imgs_computer = document.querySelectorAll('.computer_btns_img');
 
 imgs.forEach(element => {
     element.addEventListener('click', function (e) {
@@ -54,15 +55,27 @@ function roundGame(player, computer) {
 
 // Actual game DOM
 function game(str) {
+        imgs.forEach(item => {
+            item.style.opacity = 0.2;
+        });
+        str.style.opacity = 1;
         playerMove = str.alt;
-        console.log(str);
         //str.style.opacity = 1;
         //const playerMove = (prompt("Type your choice", 'paper')).toLowerCase();
         const computerMove = getComputerChoice(arr);
         divResult.innerText = roundGame(playerMove, computerMove);
-        divPlayer.innerText = 'Your Choice: ' + playerMove;
-        divComputer.innerText = 'Computer Choice: ' + computerMove;
+        
+        // Remove after opacity imgs
+
+        //divPlayer.innerText = 'Your Choice: ' + playerMove;
+        //divComputer.innerText = 'Computer Choice: ' + computerMove;
         divScore.innerText = 'Score: ' + scorePlayer + ' : ' + scoreComputer;
+
+        let computerBtn = document.querySelector('#' + computerMove);
+        imgs_computer.forEach(item => {
+            item.style.opacity = 0.2;
+        });
+        computerBtn.style.opacity = 1;
 
         
         
